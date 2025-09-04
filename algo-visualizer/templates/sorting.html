@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sorting Visualizer (Full)</h1>
+<div class="panel">
+  <label>Algorithm
+    <select id="algo">
+      <option value="bubble">Bubble</option>
+      <option value="insertion">Insertion</option>
+      <option value="selection">Selection</option>
+      <option value="merge">Merge</option>
+      <option value="quick">Quick</option>
+      <option value="heap">Heap</option>
+      <option value="shell">Shell</option>
+      <option value="counting">Counting</option>
+      <option value="radix">Radix (LSD)</option>
+      <option value="bucket">Bucket</option>
+      <option value="cocktail">Cocktail</option>
+      <option value="comb">Comb</option>
+    </select>
+  </label>
+  <label>Array Mode
+    <select id="array-mode">
+      <option value="random">Random</option>
+      <option value="preset">Preset</option>
+      <option value="custom">Custom</option>
+    </select>
+  </label>
+  <input id="custom-array" placeholder="e.g. 5,1,9,3" />
+  <label>Size <input type="range" id="size" min="5" max="80" value="30" /></label>
+  <label>Speed <input type="range" id="speed" min="10" max="300" value="80" /></label>
+  <button id="generate">Generate</button>
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+  <button id="step">Step</button>
+</div>
+<div id="meta" class="meta"></div>
+<div id="bars" class="bars"></div>
+<h3>Dry-run / Explanation</h3>
+<pre id="dryrun" class="dryrun"></pre>
+<script src="{{ url_for('static', filename='js/sorting.js') }}"></script>
+{% endblock %}

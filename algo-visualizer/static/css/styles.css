@@ -1,0 +1,17 @@
+:root{ --bg:#0b1020; --surface:#121a33; --muted:#2a355f; --accent:#6aa2ff; --text:#e6ecff; }
+*{box-sizing:border-box}
+body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:var(--bg); color:var(--text)}
+.nav{padding:12px 18px; background:linear-gradient(90deg,var(--surface),#0f1530); box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.nav a{color:#cfe0ff; margin-right:12px; text-decoration:none}
+.container{max-width:1100px; margin:20px auto; padding:0 16px}
+.hero{padding:28px; background:radial-gradient(60% 60% at 50% 0%, #1a2454 0%, #0b1020 60%); border-radius:12px}
+.panel{display:flex; gap:10px; flex-wrap:wrap; align-items:center; background:var(--surface); padding:12px; border-radius:10px; margin:12px 0}
+.btn{background:var(--accent); color:#06122a; border:none; border-radius:8px; padding:8px 12px; cursor:pointer}
+.bars{display:flex; align-items:flex-end; height:320px; background:linear-gradient(180deg,#0f1734,#0c1226); border-radius:10px; padding:8px; gap:6px; overflow:hidden}
+.bar{background:linear-gradient(180deg,#8fb6ff, #6aa2ff); width:12px; border-radius:6px 6px 2px 2px; transform-origin:bottom; transition:height .2s}
+.bar.compare{box-shadow:0 0 10px rgba(255,200,80,.9)}
+.bar.swap{box-shadow:0 0 10px rgba(255,100,150,.9)}
+.grid{display:block; width:100%; border-radius:8px; background:#0f1530}
+.meta{margin-top:8px; color:#cfe0ff}
+.dryrun{background:#06122a; padding:8px; border-radius:6px; color:#dfe7ff; white-space:pre-wrap}
+pre{background:#061229; padding:8px; border-radius:6px}

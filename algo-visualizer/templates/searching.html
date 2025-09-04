@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Searching Visualizer</h1>
+<div class="panel">
+  <label>Algorithm
+    <select id="algo">
+      <option value="linear">Linear</option>
+      <option value="binary">Binary (sorted)</option>
+      <option value="jump">Jump (sorted)</option>
+      <option value="interpolation">Interpolation (sorted, uniform)</option>
+    </select>
+  </label>
+  <label>Array Mode
+    <select id="array-mode">
+      <option value="random">Random</option>
+      <option value="preset">Preset</option>
+      <option value="custom">Custom</option>
+    </select>
+  </label>
+  <input id="custom-array" placeholder="e.g. 1,2,3,4,5" />
+  <label>Target <input id="target" /></label>
+  <button id="generate">Generate</button>
+  <button id="run">Run Search</button>
+</div>
+<div id="meta" class="meta"></div>
+<div id="bars" class="bars"></div>
+<pre id="result"></pre>
+<script src="{{ url_for('static', filename='js/searching.js') }}"></script>
+{% endblock %}

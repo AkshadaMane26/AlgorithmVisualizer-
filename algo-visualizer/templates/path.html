@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Graphs — Pathfinding & MST/TSP</h1>
+<div class="panel">
+  <label>Mode
+    <select id="mode">
+      <option value="path">Path (grid)</option>
+      <option value="prim">Prim MST</option>
+      <option value="kruskal">Kruskal MST</option>
+      <option value="tsp">TSP (Held-Karp)</option>
+    </select>
+  </label>
+  <div id="path-controls">
+    <label>Algorithm
+      <select id="path-algo"><option value="dijkstra">Dijkstra</option><option value="astar">A*</option></select>
+    </label>
+    <label>Rows <input type="number" id="rows" value="18" min="5" max="40"></label>
+    <label>Cols <input type="number" id="cols" value="28" min="5" max="60"></label>
+    <button id="make-grid">Make Grid</button>
+    <button id="run-path">Run</button>
+  </div>
+  <div id="graph-controls" style="display:none">
+    <label>Nodes (comma) <input id="nodes" placeholder="0,1,2"></label>
+    <label>Edges (u,v,w) one per line <textarea id="edges" rows="4"></textarea></label>
+    <button id="run-prim">Prim</button>
+    <button id="run-kruskal">Kruskal</button>
+    <hr/>
+    <label>TSP nodes count <input id="tsp-n" type="number" value="4" min="2" max="11"></label>
+    <button id="gen-tsp">Generate random distances</button>
+    <button id="run-tsp">Solve TSP</button>
+  </div>
+</div>
+<canvas id="grid" width="960" height="540" class="grid"></canvas>
+<pre id="graph-output"></pre>
+<script src="{{ url_for('static', filename='js/path.js') }}"></script>
+{% endblock %}

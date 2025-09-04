@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Linked List Visualizer</h1>
+<div class="panel">
+  <label>Initial (comma) <input id="initial" placeholder="1,2,3" /></label>
+  <label>Action
+    <select id="action">
+      <option value="insert_head">Insert Head</option>
+      <option value="insert_tail">Insert Tail</option>
+      <option value="insert_at">Insert At</option>
+      <option value="delete_at">Delete At</option>
+      <option value="reverse">Reverse</option>
+      <option value="search">Search</option>
+    </select>
+  </label>
+  <label>Value/Index <input id="validx" /></label>
+  <button id="run">Run</button>
+</div>
+<pre id="ll-output"></pre>
+<script src="{{ url_for('static', filename='js/linkedlist.js') }}"></script>
+{% endblock %}
